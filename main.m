@@ -1,4 +1,4 @@
-clc, clear; 
+clc, clear;
 
 % puzzle is a test matrix representing an unsolved sudoku board with zeros for
 % blanks. In the future, input is likely to be parsed and then the puzzle array 
@@ -12,6 +12,11 @@ puzzle = [0 0 0 2 6 0 7 0 1;...
           0 0 9 3 0 0 0 7 4;...
           0 4 0 0 5 0 0 3 6;...
           7 0 3 0 1 8 0 0 0];
+
+[m, n] = size(puzzle);
+
+% The following statement will be useful when the puzzle is not hard-coded.
+assert(and(m==9, n==9), 'Provided puzzle is not a 9x9 matrix.')
 
 % I sum the columns and rows here to see if they add up to 45. Adding 1 through
 % 9 together equals 45, so in the late stages these sums will be useful.
